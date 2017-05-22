@@ -32,6 +32,16 @@ Legend:
 
 TimeZone: Eastern Standard Time (EST) time-zone *WITHOUT* Day Light Savings adjustments
 
+Example of downloaded files for EUR/USD from 2000 to 2005:
+```
+DAT_ASCII_EURUSD_M1_2000.zip (1.2M)
+DAT_ASCII_EURUSD_M1_2001.zip (1.9M)
+DAT_ASCII_EURUSD_M1_2002.zip (1.7M)
+DAT_ASCII_EURUSD_M1_2003.zip (2.2M)
+DAT_ASCII_EURUSD_M1_2004.zip (2.3M)
+DAT_ASCII_EURUSD_M1_2005.zip (2.3M)
+```
+
 ## Data files provided: Early 2000 to May 2017
 ```
 git clone https://github.com/philipperemy/FX-1-Minute-Data.git fx
