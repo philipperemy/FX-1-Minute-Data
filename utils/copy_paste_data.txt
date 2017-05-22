@@ -1,0 +1,83 @@
+EUR/USD
+(2000/May)	EUR/CHF
+(2002/March)	EUR/GBP
+(2002/March)	EUR/JPY
+(2002/March)
+EUR/AUD
+(2002/August)	USD/CAD
+(2000/June)	USD/CHF
+(2000/May)	USD/JPY
+(2000/May)
+USD/MXN
+(2010/November)	GBP/CHF
+(2002/August)	GBP/JPY
+(2002/May)	GBP/USD
+(2000/May)
+AUD/JPY
+(2002/August)	AUD/USD
+(2000/June)	CHF/JPY
+(2002/August)	NZD/JPY
+(2006/September)
+NZD/USD
+(2005/August)	XAU/USD
+(2009/March)	EUR/CAD
+(2007/March)	AUD/CAD
+(2007/July)
+CAD/JPY
+(2007/March)	EUR/NZD
+(2008/March)	GRX/EUR
+(2010/November)	NZD/CAD
+(2008/March)
+SGD/JPY
+(2008/August)	USD/HKD
+(2008/August)	USD/NOK
+(2008/August)	USD/TRY
+(2010/November)
+XAU/AUD
+(2009/May)	AUD/CHF
+(2008/March)	AUX/AUD
+(2010/November)	EUR/HUF
+(2010/November)
+EUR/PLN
+(2010/November)	FRX/EUR
+(2010/November)	HKX/HKD
+(2010/November)	NZD/CHF
+(2008/March)
+SPX/USD
+(2010/November)	USD/HUF
+(2010/November)	USD/PLN
+(2010/November)	USD/ZAR
+(2010/November)
+XAU/CHF
+(2009/May)	ZAR/JPY
+(2010/November)	BCO/USD
+(2010/November)	ETX/EUR
+(2010/November)
+EUR/CZK
+(2010/November)	EUR/SEK
+(2008/August)	GBP/AUD
+(2007/September)	GBP/NZD
+(2008/March)
+JPX/JPY
+(2010/November)	UDX/USD
+(2010/November)	USD/CZK
+(2010/August)	USD/SEK
+(2008/August)
+WTI/USD
+(2010/November)	XAU/EUR
+(2009/May)	AUD/NZD
+(2007/September)	CAD/CHF
+(2008/March)
+EUR/DKK
+(2008/August)	EUR/NOK
+(2008/August)	EUR/TRY
+(2010/November)	GBP/CAD
+(2007/September)
+NSX/USD
+(2010/November)	UKX/GBP
+(2010/November)	USD/DKK
+(2008/August)	USD/SGD
+(2008/August)
+XAG/USD
+(2009/May)	XAU/GBP
+(2009/May)
