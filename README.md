@@ -45,7 +45,7 @@ DAT_ASCII_EURUSD_M1_2005.zip (2.3M)
 ## Data files provided: Early 2000 to May 2017
 ```
 git clone https://github.com/philipperemy/FX-1-Minute-Data.git fx
-cd fx/data # contains the FULL dataset of all FX pairs.
+cd fx/full-data-2000-2017 # contains the FULL dataset of all FX pairs.
 ```
 
 ## How to use the API?
