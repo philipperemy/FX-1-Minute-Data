@@ -1,4 +1,4 @@
-output_pair	currency_pair_code	history_first_trading_month
+currency_pair_name	currency_pair_code	history_first_trading_month
 EUR/USD	eurusd	200005
 EUR/CHF	eurchf	200203
 EUR/GBP	eurgbp	200203
