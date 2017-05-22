@@ -29,7 +29,7 @@ if __name__ == '__main__':
     import pandas as pd
 
     d = pd.DataFrame()
-    d['output_pair'] = output_pair
+    d['currency_pair_name'] = output_pair
     d['currency_pair_code'] = output_currency
     d['history_first_trading_month'] = history_first_trading_month
     d.to_csv('output.csv', index=False, sep='\t')
