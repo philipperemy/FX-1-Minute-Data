@@ -2,7 +2,7 @@
 
 ## Data files: Detailed Specification
 
-Here you can find all the details regarding any downloaded file (Generic ASCII in M1 Bars).
+Here you can find all the details regarding any downloaded file (Generic ASCII in M1 Bars). CSV is defined as semicolon separated file here.
 
 As example, in `DAT_ASCII_EURUSD_M1_201202.csv`:
 
