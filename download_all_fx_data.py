@@ -38,7 +38,7 @@ if __name__ == '__main__':
                         pass  # lets download it month by month.
                     month = 1
                     while not could_download_full_year and month <= 12:
-                        output_filename = download_fx_m1_data(str(year), str(month).strip('0'), currency_pair_code)
+                        output_filename = download_fx_m1_data(str(year), str(month), currency_pair_code)
                         shutil.move(output_filename, os.path.join(output_folder, output_filename))
                         month += 1
                     year += 1
