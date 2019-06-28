@@ -83,7 +83,7 @@ python download_all_fx_data.py
 ## API
 
 Then of course, you can use directly the API. There are two endpoints depending on what you query:
-- If you query data of the same year, then you have to query it per month. Say, you are in June 2019. You will need to call to make 6 calls to download the data of 2019 up to June.
+- If you query data of the same year, then you have to query it per month. Say, you are in June 2019. You will need to make 6 calls to download the data of 2019 up to June.
 
 ```python
 api.download_fx_m1_data(year='2016', month='7', pair='eurgbp')
