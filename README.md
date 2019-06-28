@@ -69,7 +69,7 @@ Number of lots. From what I saw it's always 0 here.
 
 ## Data files provided: Early 2000 to May 2017
 
-Available [2000-Jun2019/](2000-Jun2019)
+Available here: [2000-Jun2019](2000-Jun2019)
 
 ## How to download your own dataset?
 
