@@ -1,5 +1,7 @@
 # FX 1-Minute Dataset
 
+Retrieval made easy.
+
 ## Data specification
 
 This repository contains:
