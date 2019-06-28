@@ -82,11 +82,18 @@ python download_all_fx_data.py
 
 ## API
 
-Then of course, you can use directly the API. There are two endpoints depending on what you query:
+Then of course, you can use directly the API in `api.py`. There are two endpoints depending on what you query:
 - If you query data of the same year, then you have to query it per month. Say, you are in June 2019. You will need to make 6 calls to download the data of 2019 up to June.
 
 ```python
-api.download_fx_m1_data(year='2016', month='7', pair='eurgbp')
+def download_fx_m1_data(year='2016', month='7', pair='eurgbp'):
+    """
+    Download 1-Minute FX data per month.
+    :param year: Trading year. Format is 2016.
+    :param month: Trading month. Format is 7 or 12.
+    :param pair: Currency pair. Example: eurgbp.
+    :return: ZIP Filename.
+    """
 ```
 
 - If you query data for past years, then you can query the whole year in one call.
@@ -94,6 +101,12 @@ api.download_fx_m1_data(year='2016', month='7', pair='eurgbp')
 Use this function for downloading data related to the CURRENT year. E.g. if you're interested in data of 2017 and we're in 2017, use this one.
 
 ```python
-api.download_fx_m1_data_year(year='2016', pair='eurgbp')
+def download_fx_m1_data_year(year='2016', pair='eurgbp'):
+    """
+    Download 1-Minute FX data per year.
+    :param year: Trading year. Format is 2016.
+    :param month: Trading month. Format is 7 or 12.
+    :param pair: Currency pair. Example: eurgbp.
+    :return: ZIP Filename.
+    """
 ```
-
