@@ -67,7 +67,7 @@ The close (last) bid quote of the 1M bin.
 
 Number of lots. From what I saw it's always 0 here.
 
-## Data files provided: Early 2000 to May 2017
+## Data files provided: Early 2000 to nowadays
 
 Available here: [2000-Jun2019](2000-Jun2019)
 
