@@ -5,7 +5,7 @@ Retrieval made easy.
 ## Data specification
 
 This repository contains:
-- A dataset of all the FX prices (1-minute data). from 2000 to late June 2019.
+- A dataset of all the FX prices (1-minute data) from 2000 to late June 2019, in Generic ASCII.
 - Also contains the Crude Oil prices (WTI/USD) and SPX/USD.
 - A set of functions to download the historical prices yourself.
 
