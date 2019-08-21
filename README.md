@@ -1,4 +1,4 @@
-# FX 1-Minute Dataset
+# FX 1-Minute Dataset (+ Crude Oil and Stock indexes)
 
 Retrieval made easy.
 
@@ -6,6 +6,7 @@ Retrieval made easy.
 
 This repository contains:
 - A dataset of all the FX prices (1-minute data) from 2000 to late June 2019, in Generic ASCII.
+   - More than 66 FX pairs
 - Contains some commodities:
    - WTI/USD = WEST TEXAS INTERMEDIATE in USD
    - BCO/USD = BRENT CRUDE OIL in USD
