@@ -6,6 +6,7 @@ Retrieval made easy.
 
 This repository contains:
 - A dataset of all the FX prices (1-minute data). from 2000 to late June 2019.
+- Also contains the Crude Oil prices (WTI/USD) and SPX/USD.
 - A set of functions to download the historical prices yourself.
 
 All the data is retrieved from: http://www.histdata.com/
