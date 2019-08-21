@@ -6,7 +6,20 @@ Retrieval made easy.
 
 This repository contains:
 - A dataset of all the FX prices (1-minute data) from 2000 to late June 2019, in Generic ASCII.
-- Also contains the Crude Oil prices (WTI/USD) and SPX/USD.
+- Contains some commodities:
+   - WTI/USD = WEST TEXAS INTERMEDIATE in USD
+   - BCO/USD = BRENT CRUDE OIL in USD
+- Contains some indexes:
+   - SPX/USD = S&P 500 in USD
+   - JPX/JPY = NIKKEI 225 in JPY
+   - NSX/USD = NASDAQ 100 in USD
+   - FRX/EUR = FRENCH CAC 40 in EUR
+   - UDX/USD = US DOLLAR INDEX in USD
+   - UKX/GBP = FTSE 100 in GBP
+   - GRX/EUR = DAX 30 in EUR
+   - AUX/AUD = ASX 200 in AUD
+   - HKX/HKD = HAN SENG in HKD
+E   - TX/EUR = EUROSTOXX 50 in EUR
 - A set of functions to download the historical prices yourself.
 
 All the data is retrieved from: http://www.histdata.com/
