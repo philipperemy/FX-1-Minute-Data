@@ -8,6 +8,16 @@ Retrieval made easy.
 pip install histdata
 ```
 
+### Re-download the dataset of the repository
+
+This command will re-download all the FULL 1M dataset up to today (expect the runtime to be ~4 hours).
+
+```bash
+pip install histdata
+python download_all_fx_data.py
+```
+
+### Examples
 
 ```python
 from histdata import download_hist_data as dl
@@ -143,12 +153,5 @@ Number of lots. From what I saw it's always 0 here.
 
 Available here: [2000-Jun2019](2000-Jun2019)
 
-## How to download your own dataset?
 
-This command will re-download all the FULL FX dataset up to today (expect the runtime to be ~4 hours).
-
-```bash
-pip install -r requirements.txt
-python download_all_fx_data.py
-```
 
