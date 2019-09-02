@@ -3,6 +3,24 @@
 Retrieval made easy for 1-minute (and tick data).
 
 
+Table of Contents
+=================
+
+   * [FX 1-Minute Dataset (  Crude Oil and Stock indexes)](#fx-1-minute-dataset--crude-oil-and-stock-indexes)
+      * [Data files provided from early 2000 to June 2019](#data-files-provided-from-early-2000-to-june-2019)
+      * [API](#api)
+         * [Re-download the dataset of the repository](#re-download-the-dataset-of-the-repository)
+         * [Examples](#examples)
+      * [Data specification](#data-specification)
+         * [DateTime Stamp](#datetime-stamp)
+         * [OPEN Bid Quote](#open-bid-quote)
+         * [HIGH Bid Quote](#high-bid-quote)
+         * [LOW Bid Quote](#low-bid-quote)
+         * [CLOSE Bid Quote](#close-bid-quote)
+         * [Volume](#volume)
+
+
+
 ## Data files provided from early 2000 to June 2019
 
 Available here: [2000-Jun2019](2000-Jun2019)
