@@ -67,7 +67,8 @@ def download_hist_data(year='2016',
                        pair='eurusd',
                        time_frame=TimeFrame.ONE_MINUTE,
                        platform=Platform.GENERIC_ASCII,
-                       output_directory='.'):
+                       output_directory='.',
+                       verbose=True):
     """
     Download 1-Minute FX data per month.
     :param year: Trading year. Format is 2016.
@@ -82,9 +83,9 @@ def download_hist_data(year='2016',
     tick_data = time_frame.startswith('T')
     if (not tick_data) and ((int(year) >= datetime.now().year and month is None) or
                             (int(year) <= datetime.now().year - 1 and month is not None)):
-        print('For the current year, please specify month=7 for example.')
-        print('For the past years, please query per year with month=None.')
-        exit(1)
+        msg = 'For the current year, please specify month=7 for example.\n'
+        msg += 'For the past years, please query per year with month=None.'
+        raise AssertionError(msg)
 
     prefix_referer = get_prefix_referer(time_frame, platform)
     referer = get_referer(prefix_referer, pair.lower(), year, month)
@@ -100,7 +101,8 @@ def download_hist_data(year='2016',
                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
                'Referer': referer}
 
-    print(referer)
+    if verbose:
+        print(referer)
     r1 = requests.get(referer, allow_redirects=True)
     assert r1.status_code == 200, 'Make sure the website www.histdata.com is up.'
 
@@ -123,11 +125,10 @@ def download_hist_data(year='2016',
                       headers=headers)
 
     assert len(r.content) > 0, 'No data could be found here.'
-    print(data)
-
+    if verbose:
+        print(data)
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
-
     if month is None:
         output_filename = 'DAT_{}_{}_{}_{}.zip'.format(platform, pair.upper(), time_frame, str(year))
     else:
@@ -138,7 +139,8 @@ def download_hist_data(year='2016',
         for chunk in r.iter_content(chunk_size=1024):
             if chunk:
                 f.write(chunk)
-    print('Wrote to {}'.format(output_filename))
+    if verbose:
+        print('Wrote to {}'.format(output_filename))
     return output_filename
 
 
