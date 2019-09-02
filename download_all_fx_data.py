@@ -1,8 +1,7 @@
 import csv
 import os
-import shutil
 
-from api import download_fx_m1_data, download_fx_m1_data_year
+from histdata.api import download_hist_data
 
 
 def mkdir_p(path):
@@ -16,31 +15,39 @@ def mkdir_p(path):
             raise
 
 
-if __name__ == '__main__':
-
+def download_all():
     with open('pairs.csv', 'r') as f:
         reader = csv.reader(f, delimiter='\t')
         next(reader, None)  # skip the headers
         for row in reader:
-            currency_pair_name, currency_pair_code, history_first_trading_month = row
+            currency_pair_name, pair, history_first_trading_month = row
             year = int(history_first_trading_month[0:4])
             print(currency_pair_name)
-            output_folder = os.path.join('output', currency_pair_code)
+            output_folder = os.path.join('output', pair)
             mkdir_p(output_folder)
             try:
                 while True:
                     could_download_full_year = False
                     try:
-                        output_filename = download_fx_m1_data_year(year, currency_pair_code)
-                        shutil.move(output_filename, os.path.join(output_folder, output_filename))
+                        print('-', download_hist_data(year=year,
+                                                      pair=pair,
+                                                      output_directory=output_folder,
+                                                      verbose=False))
                         could_download_full_year = True
-                    except:
+                    except AssertionError:
                         pass  # lets download it month by month.
                     month = 1
                     while not could_download_full_year and month <= 12:
-                        output_filename = download_fx_m1_data(str(year), str(month), currency_pair_code)
-                        shutil.move(output_filename, os.path.join(output_folder, output_filename))
+                        print('-', download_hist_data(year=str(year),
+                                                      month=str(month),
+                                                      pair=pair,
+                                                      output_directory=output_folder,
+                                                      verbose=False))
                         month += 1
                     year += 1
-            except Exception as e:
+            except Exception:
                 print('[DONE] for currency', currency_pair_name)
+
+
+if __name__ == '__main__':
+    download_all()
