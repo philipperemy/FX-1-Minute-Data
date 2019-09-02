@@ -2,6 +2,12 @@
 
 Retrieval made easy for 1-minute (and tick data).
 
+
+## Data files provided from early 2000 to June 2019
+
+Available here: [2000-Jun2019](2000-Jun2019)
+
+
 ## API
 
 ```
@@ -148,10 +154,6 @@ The close (last) bid quote of the 1M bin.
 ### Volume
 
 Number of lots. From what I saw it's always 0 here.
-
-## Data files provided: Early 2000 >> June 2019
-
-Available here: [2000-Jun2019](2000-Jun2019)
 
 
 
