@@ -1,6 +1,6 @@
 # FX 1-Minute Dataset (+ Crude Oil and Stock indexes)
 
-Retrieval made easy.
+Retrieval made easy for 1-minute (and tick data).
 
 ## API
 
@@ -149,7 +149,7 @@ The close (last) bid quote of the 1M bin.
 
 Number of lots. From what I saw it's always 0 here.
 
-## Data files provided: Early 2000 to nowadays
+## Data files provided: Early 2000 >> June 2019
 
 Available here: [2000-Jun2019](2000-Jun2019)
 
