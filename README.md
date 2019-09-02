@@ -2,6 +2,63 @@
 
 Retrieval made easy.
 
+## API
+
+```
+pip install histdata
+```
+
+
+```python
+from histdata import download_hist_data as dl
+from histdata.api import Platform as P, TimeFrame as TF
+```
+
+- Download tick data for 2019/06 (current year):
+
+```python
+dl(year='2019', month='6', platform=P.GENERIC_ASCII, time_frame=TF.TICK_DATA)
+```
+
+- Download 1-Minute data for 2019/06 (current year):
+
+```python
+dl(year='2019', month='6', pair='eurusd', platform=P.GENERIC_ASCII, time_frame=TF.ONE_MINUTE)
+```
+
+- Download tick data for 2018/06 (past year):
+
+```python
+dl(year='2019', month='6', platform=P.GENERIC_ASCII, time_frame=TF.TICK_DATA)
+```
+
+- Download 1-Minute data for 2019/06 (past year):
+
+```python
+dl(year='2019', month=None, pair='eurusd', platform=P.GENERIC_ASCII, time_frame=TF.ONE_MINUTE)
+```
+
+- Other possible calls:
+
+```python
+dl(year='2019', month='6', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_LAST)
+dl(year='2019', month='6', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_ASK)
+dl(year='2019', month='6', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_BID)
+dl(year='2019', month='6', platform=P.NINJA_TRADER, time_frame=TF.ONE_MINUTE)
+dl(year='2019', month='6', platform=P.GENERIC_ASCII, time_frame=TF.TICK_DATA)
+dl(year='2019', month='6', platform=P.EXCEL, time_frame=TF.ONE_MINUTE)
+dl(year='2019', month='6', platform=P.META_TRADER, time_frame=TF.ONE_MINUTE)
+dl(year='2019', month='6', platform=P.META_STOCK, time_frame=TF.ONE_MINUTE)
+dl(year='2018', month='6', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_LAST)
+dl(year='2018', month='6', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_ASK)
+dl(year='2018', month='6', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_BID)
+dl(year='2018', month=None, platform=P.NINJA_TRADER, time_frame=TF.ONE_MINUTE)
+dl(year='2018', month=None, platform=P.EXCEL, time_frame=TF.ONE_MINUTE)
+dl(year='2018', month=None, platform=P.META_TRADER, time_frame=TF.ONE_MINUTE)
+dl(year='2018', month=None, platform=P.META_STOCK, time_frame=TF.ONE_MINUTE)
+
+```
+
 ## Data specification
 
 This repository contains:
@@ -95,32 +152,3 @@ pip install -r requirements.txt
 python download_all_fx_data.py
 ```
 
-## API
-
-Then, of course, you can use directly the API in `api.py`. There are two endpoints depending on what you query:
-
-- If you want data for the current year, then you have to query it per month.
-
-```python
-def download_fx_m1_data(year='2016', month='7', pair='eurgbp'):
-    """
-    Download 1-Minute FX data per month.
-    :param year: Trading year. Format is 2016.
-    :param month: Trading month. Format is 7 or 12.
-    :param pair: Currency pair. Example: eurgbp.
-    :return: ZIP Filename.
-    """
-```
-
-- If you are interested in data for the past years, then you can query per year.
-
-```python
-def download_fx_m1_data_year(year='2016', pair='eurgbp'):
-    """
-    Download 1-Minute FX data per year.
-    :param year: Trading year. Format is 2016.
-    :param month: Trading month. Format is 7 or 12.
-    :param pair: Currency pair. Example: eurgbp.
-    :return: ZIP Filename.
-    """
-```
