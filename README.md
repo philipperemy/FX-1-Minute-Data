@@ -17,7 +17,7 @@ from histdata.api import Platform as P, TimeFrame as TF
 - Download tick data for 2019/06 (current year):
 
 ```python
-dl(year='2019', month='6', platform=P.GENERIC_ASCII, time_frame=TF.TICK_DATA)
+dl(year='2019', month='6', pair='eurusd', platform=P.GENERIC_ASCII, time_frame=TF.TICK_DATA)
 ```
 
 - Download 1-Minute data for 2019/06 (current year):
@@ -29,7 +29,7 @@ dl(year='2019', month='6', pair='eurusd', platform=P.GENERIC_ASCII, time_frame=T
 - Download tick data for 2018/06 (past year):
 
 ```python
-dl(year='2019', month='6', platform=P.GENERIC_ASCII, time_frame=TF.TICK_DATA)
+dl(year='2019', month='6', pair='eurusd', platform=P.GENERIC_ASCII, time_frame=TF.TICK_DATA)
 ```
 
 - Download 1-Minute data for 2019/06 (past year):
@@ -41,21 +41,21 @@ dl(year='2019', month=None, pair='eurusd', platform=P.GENERIC_ASCII, time_frame=
 - Other possible calls:
 
 ```python
-dl(year='2019', month='6', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_LAST)
-dl(year='2019', month='6', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_ASK)
-dl(year='2019', month='6', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_BID)
-dl(year='2019', month='6', platform=P.NINJA_TRADER, time_frame=TF.ONE_MINUTE)
-dl(year='2019', month='6', platform=P.GENERIC_ASCII, time_frame=TF.TICK_DATA)
-dl(year='2019', month='6', platform=P.EXCEL, time_frame=TF.ONE_MINUTE)
-dl(year='2019', month='6', platform=P.META_TRADER, time_frame=TF.ONE_MINUTE)
-dl(year='2019', month='6', platform=P.META_STOCK, time_frame=TF.ONE_MINUTE)
-dl(year='2018', month='6', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_LAST)
-dl(year='2018', month='6', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_ASK)
-dl(year='2018', month='6', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_BID)
-dl(year='2018', month=None, platform=P.NINJA_TRADER, time_frame=TF.ONE_MINUTE)
-dl(year='2018', month=None, platform=P.EXCEL, time_frame=TF.ONE_MINUTE)
-dl(year='2018', month=None, platform=P.META_TRADER, time_frame=TF.ONE_MINUTE)
-dl(year='2018', month=None, platform=P.META_STOCK, time_frame=TF.ONE_MINUTE)
+dl(year='2019', month='6', pair='eurusd', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_LAST)
+dl(year='2019', month='6', pair='eurusd', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_ASK)
+dl(year='2019', month='6', pair='eurusd', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_BID)
+dl(year='2019', month='6', pair='eurusd', platform=P.NINJA_TRADER, time_frame=TF.ONE_MINUTE)
+dl(year='2019', month='6', pair='eurusd', platform=P.GENERIC_ASCII, time_frame=TF.TICK_DATA)
+dl(year='2019', month='6', pair='eurusd', platform=P.EXCEL, time_frame=TF.ONE_MINUTE)
+dl(year='2019', month='6', pair='eurusd', platform=P.META_TRADER, time_frame=TF.ONE_MINUTE)
+dl(year='2019', month='6', pair='eurusd', platform=P.META_STOCK, time_frame=TF.ONE_MINUTE)
+dl(year='2018', month='6', pair='eurusd', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_LAST)
+dl(year='2018', month='6', pair='eurusd', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_ASK)
+dl(year='2018', month='6', pair='eurusd', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_BID)
+dl(year='2018', month=None, pair='eurusd', platform=P.NINJA_TRADER, time_frame=TF.ONE_MINUTE)
+dl(year='2018', month=None, pair='eurusd', platform=P.EXCEL, time_frame=TF.ONE_MINUTE)
+dl(year='2018', month=None, pair='eurusd', platform=P.META_TRADER, time_frame=TF.ONE_MINUTE)
+dl(year='2018', month=None, pair='eurusd', platform=P.META_STOCK, time_frame=TF.ONE_MINUTE)
 
 ```
 
