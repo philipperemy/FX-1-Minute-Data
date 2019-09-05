@@ -4,7 +4,7 @@ Retrieval made easy for 1-minute (and tick data).
 
 
    * Table of Contents
-      * [Data files provided from early 2000 to June 2019](#data-files-provided-from-early-2000-to-june-2019)
+      * [Dataset 1M from early 2000 to June 2019](#data-files-provided-from-early-2000-to-june-2019)
       * [API](#api)
          * [Re-download the dataset of the repository](#re-download-the-dataset-of-the-repository)
          * [Examples](#examples)
