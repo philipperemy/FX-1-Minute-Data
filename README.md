@@ -18,7 +18,7 @@ Retrieval made easy for 1-minute (and tick data).
 
 
 
-## Data files provided from early 2000 to June 2019
+## Dataset 1M from early 2000 to June 2019
 
 Available here: [2000-Jun2019](2000-Jun2019)
 
