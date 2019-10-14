@@ -25,6 +25,9 @@ Available here: [2000-Jun2019](2000-Jun2019)
 
 ## API
 
+[![Downloads](https://pepy.tech/badge/histdata)](https://pepy.tech/project/histdata)
+[![Downloads](https://pepy.tech/badge/histdata/month)](https://pepy.tech/project/histdata/month)
+
 ```
 pip install histdata
 ```
