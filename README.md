@@ -20,7 +20,7 @@ Retrieval made easy for 1-minute (and tick data).
 
 ## Dataset 1M from early 2000 to June 2019
 
-Available here: [2000-Jun2019](2000-Jun2019)
+Available here: [2000-Jun2019](2000-Jun2019). Due to Github repository space limit policies, we will stop publishing the updated dataset on Github. Refer to the section [Re-download the dataset of the repository](#re-download-the-dataset-of-the-repository) to generate your own.
 
 
 ## API
