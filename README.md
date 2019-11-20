@@ -48,28 +48,10 @@ from histdata import download_hist_data as dl
 from histdata.api import Platform as P, TimeFrame as TF
 ```
 
-- Download tick data for 2019/06 (current year):
+- Download tick data for 2019/06:
 
 ```python
 dl(year='2019', month='6', pair='eurusd', platform=P.GENERIC_ASCII, time_frame=TF.TICK_DATA)
-```
-
-- Download 1-Minute data for 2019/06 (current year):
-
-```python
-dl(year='2019', month='6', pair='eurusd', platform=P.GENERIC_ASCII, time_frame=TF.ONE_MINUTE)
-```
-
-- Download tick data for 2018/06 (past year):
-
-```python
-dl(year='2019', month='6', pair='eurusd', platform=P.GENERIC_ASCII, time_frame=TF.TICK_DATA)
-```
-
-- Download 1-Minute data for 2019/06 (past year):
-
-```python
-dl(year='2019', month=None, pair='eurusd', platform=P.GENERIC_ASCII, time_frame=TF.ONE_MINUTE)
 ```
 
 - Other possible calls:
@@ -86,11 +68,6 @@ dl(year='2019', month='6', pair='eurusd', platform=P.META_STOCK, time_frame=TF.O
 dl(year='2018', month='6', pair='eurusd', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_LAST)
 dl(year='2018', month='6', pair='eurusd', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_ASK)
 dl(year='2018', month='6', pair='eurusd', platform=P.NINJA_TRADER, time_frame=TF.TICK_DATA_BID)
-dl(year='2018', month=None, pair='eurusd', platform=P.NINJA_TRADER, time_frame=TF.ONE_MINUTE)
-dl(year='2018', month=None, pair='eurusd', platform=P.EXCEL, time_frame=TF.ONE_MINUTE)
-dl(year='2018', month=None, pair='eurusd', platform=P.META_TRADER, time_frame=TF.ONE_MINUTE)
-dl(year='2018', month=None, pair='eurusd', platform=P.META_STOCK, time_frame=TF.ONE_MINUTE)
-
 ```
 
 ## Data specification
