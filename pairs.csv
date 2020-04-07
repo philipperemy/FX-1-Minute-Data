@@ -1,67 +1,67 @@
-currency_pair_name	currency_pair_code	history_first_trading_month
-EUR/USD	eurusd	200005
-EUR/CHF	eurchf	200203
-EUR/GBP	eurgbp	200203
-EUR/JPY	eurjpy	200203
-EUR/AUD	euraud	200208
-USD/CAD	usdcad	200006
-USD/CHF	usdchf	200005
-USD/JPY	usdjpy	200005
-USD/MXN	usdmxn	201011
-GBP/CHF	gbpchf	200208
-GBP/JPY	gbpjpy	200205
-GBP/USD	gbpusd	200005
-AUD/JPY	audjpy	200208
-AUD/USD	audusd	200006
-CHF/JPY	chfjpy	200208
-NZD/JPY	nzdjpy	200609
-NZD/USD	nzdusd	200508
-XAU/USD	xauusd	200903
-EUR/CAD	eurcad	200703
-AUD/CAD	audcad	200707
-CAD/JPY	cadjpy	200703
-EUR/NZD	eurnzd	200803
-GRX/EUR	grxeur	201011
-NZD/CAD	nzdcad	200803
-SGD/JPY	sgdjpy	200808
-USD/HKD	usdhkd	200808
-USD/NOK	usdnok	200808
-USD/TRY	usdtry	201011
-XAU/AUD	xauaud	200905
-AUD/CHF	audchf	200803
-AUX/AUD	auxaud	201011
-EUR/HUF	eurhuf	201011
-EUR/PLN	eurpln	201011
-FRX/EUR	frxeur	201011
-HKX/HKD	hkxhkd	201011
-NZD/CHF	nzdchf	200803
-SPX/USD	spxusd	201011
-USD/HUF	usdhuf	201011
-USD/PLN	usdpln	201011
-USD/ZAR	usdzar	201011
-XAU/CHF	xauchf	200905
-ZAR/JPY	zarjpy	201011
-BCO/USD	bcousd	201011
-ETX/EUR	etxeur	201011
-EUR/CZK	eurczk	201011
-EUR/SEK	eursek	200808
-GBP/AUD	gbpaud	200709
-GBP/NZD	gbpnzd	200803
-JPX/JPY	jpxjpy	201011
-UDX/USD	udxusd	201011
-USD/CZK	usdczk	201008
-USD/SEK	usdsek	200808
-WTI/USD	wtiusd	201011
-XAU/EUR	xaueur	200905
-AUD/NZD	audnzd	200709
-CAD/CHF	cadchf	200803
-EUR/DKK	eurdkk	200808
-EUR/NOK	eurnok	200808
-EUR/TRY	eurtry	201011
-GBP/CAD	gbpcad	200709
-NSX/USD	nsxusd	201011
-UKX/GBP	ukxgbp	201011
-USD/DKK	usddkk	200808
-USD/SGD	usdsgd	200808
-XAG/USD	xagusd	200905
-XAU/GBP	xaugbp	200905
+currency_pair_name,currency_pair_code,history_first_trading_month
+EUR/USD,eurusd,200005
+EUR/CHF,eurchf,200203
+EUR/GBP,eurgbp,200203
+EUR/JPY,eurjpy,200203
+EUR/AUD,euraud,200208
+USD/CAD,usdcad,200006
+USD/CHF,usdchf,200005
+USD/JPY,usdjpy,200005
+USD/MXN,usdmxn,201011
+GBP/CHF,gbpchf,200208
+GBP/JPY,gbpjpy,200205
+GBP/USD,gbpusd,200005
+AUD/JPY,audjpy,200208
+AUD/USD,audusd,200006
+CHF/JPY,chfjpy,200208
+NZD/JPY,nzdjpy,200609
+NZD/USD,nzdusd,200508
+XAU/USD,xauusd,200903
+EUR/CAD,eurcad,200703
+AUD/CAD,audcad,200707
+CAD/JPY,cadjpy,200703
+EUR/NZD,eurnzd,200803
+GRX/EUR,grxeur,201011
+NZD/CAD,nzdcad,200803
+SGD/JPY,sgdjpy,200808
+USD/HKD,usdhkd,200808
+USD/NOK,usdnok,200808
+USD/TRY,usdtry,201011
+XAU/AUD,xauaud,200905
+AUD/CHF,audchf,200803
+AUX/AUD,auxaud,201011
+EUR/HUF,eurhuf,201011
+EUR/PLN,eurpln,201011
+FRX/EUR,frxeur,201011
+HKX/HKD,hkxhkd,201011
+NZD/CHF,nzdchf,200803
+SPX/USD,spxusd,201011
+USD/HUF,usdhuf,201011
+USD/PLN,usdpln,201011
+USD/ZAR,usdzar,201011
+XAU/CHF,xauchf,200905
+ZAR/JPY,zarjpy,201011
+BCO/USD,bcousd,201011
+ETX/EUR,etxeur,201011
+EUR/CZK,eurczk,201011
+EUR/SEK,eursek,200808
+GBP/AUD,gbpaud,200709
+GBP/NZD,gbpnzd,200803
+JPX/JPY,jpxjpy,201011
+UDX/USD,udxusd,201011
+USD/CZK,usdczk,201008
+USD/SEK,usdsek,200808
+WTI/USD,wtiusd,201011
+XAU/EUR,xaueur,200905
+AUD/NZD,audnzd,200709
+CAD/CHF,cadchf,200803
+EUR/DKK,eurdkk,200808
+EUR/NOK,eurnok,200808
+EUR/TRY,eurtry,201011
+GBP/CAD,gbpcad,200709
+NSX/USD,nsxusd,201011
+UKX/GBP,ukxgbp,201011
+USD/DKK,usddkk,200808
+USD/SGD,usdsgd,200808
+XAG/USD,xagusd,200905
+XAU/GBP,xaugbp,200905
