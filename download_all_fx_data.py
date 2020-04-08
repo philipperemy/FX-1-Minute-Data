@@ -17,7 +17,7 @@ def mkdir_p(path):
 
 def download_all():
     with open('pairs.csv', 'r') as f:
-        reader = csv.reader(f, delimiter='\t')
+        reader = csv.reader(f, delimiter=',')
         next(reader, None)  # skip the headers
         for row in reader:
             currency_pair_name, pair, history_first_trading_month = row
