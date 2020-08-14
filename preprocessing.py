@@ -39,9 +39,9 @@ def prepare_data(symbol_folder, name, overwrite):
     df0[7] = [0] + [symmetric_normalize(current, previous) for current, previous in zip(price[1:], price)]
     df0[8] = price
     df1 = df0.copy(deep=True)
+    df1[6] = 1 / (1 + df1[6]) - 1
+    df1[7] = -df1[7]
     df1[8] = 1 / df1[8]
-    df1[6] = 1 / (1 + df1[6])
-    df1[7] = -df1[6]
     f64df0 = df0.to_numpy(dtype='float64')
     f64df1 = df1.to_numpy(dtype='float64')
     np.save(numpy_path, f64df0)
@@ -55,7 +55,7 @@ def concatenate(folder, ending):
     files = [os.path.join(folder, name) for name in files]
     numpy = [np.load(name) for name in files]
     numpy = np.concatenate(numpy, axis=0)
-    np.save(f'{folder}.{ending}', numpy)
+    np.save(f'{folder}{ending}', numpy)
 
 
 def sub_iterator(overwrite, output_folder, symbol, functions):
@@ -66,7 +66,7 @@ def sub_iterator(overwrite, output_folder, symbol, functions):
         for fn in functions:
             fn(symbol_folder, name, overwrite)
     concatenate(symbol_folder, '.npy')
-    concatenate(symbol_folder, '.npyi')
+    concatenate(symbol_folder, '.npyi.npy')
     print(f"FINISHED {symbol}")
 
 
