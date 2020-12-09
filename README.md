@@ -1,4 +1,4 @@
-# FX 1-Minute Dataset (+ Crude Oil and Stock indexes)
+# FX 1-Minute Dataset (+ Crude Oil and Stock indexes) 
 
 Retrieval made easy for 1-minute (and tick data). Source: http://histdata.com/.
 
