@@ -15,33 +15,26 @@ def unzip(symbol_folder, name, overwrite):
         f.extractall(symbol_folder)
 
 
-def symmetric_normalize(current, previous):
-    if current > previous:
-        return current / previous - 1
-    return - previous / current + 1
+def norm(current_list, previous_list):
+    return zip(*((current / previous - 1, (current / previous - 1) if current > previous else (- previous / current + 1)) for current, previous in zip(current_list, previous_list)))
 
 
 def prepare_data(symbol_folder, name, overwrite):
     path = os.path.join(symbol_folder, name.replace('.zip', '.csv'))
-    numpy_path = path.replace('.csv', '.npy')
+    numpy_path = path.replace('.csv', '')
     if not path.endswith('.csv') or (not overwrite and os.path.exists(numpy_path)):
         return
     df0 = pd.read_csv(path, sep=';', header=None)
-    datetime_objects = [datetime.datetime.strptime(timestamp, "%Y%m%d %H%M%S") for timestamp in df0[0]]
-    price = df0[4]
-    df0[0] = [obj.timestamp() for obj in datetime_objects]
-    df0[1] = [obj.year for obj in datetime_objects]
-    df0[2] = [obj.month for obj in datetime_objects]
-    df0[3] = [obj.day for obj in datetime_objects]
-    df0[4] = [obj.hour for obj in datetime_objects]
-    df0[5] = [obj.minute for obj in datetime_objects]
-    df0[6] = [0] + [current / previous - 1 for current, previous in zip(price[1:], price)]
-    df0[7] = [0] + [symmetric_normalize(current, previous) for current, previous in zip(price[1:], price)]
-    df0[8] = price
+    high = df0[2]
+    low = df0[3] 
+    close = df0[4]
+    df0[0], df0[1] = norm(high[1:], close)
+    df0[2], df0[3] = norm(low[1:], close)
+    df0[4], df0[5] = norm(close[1:], close)
     df1 = df0.copy(deep=True)
-    df1[6] = 1 / (1 + df1[6]) - 1
-    df1[7] = -df1[7]
-    df1[8] = 1 / df1[8]
+    df1[0], df1[1] = norm(1/low[1:], 1/close)
+    df1[2], df1[3] = norm(1/high[1:], 1/close)
+    df1[4], df1[5] = norm(1/close[1:], 1/close)
     f64df0 = df0.to_numpy(dtype='float64')
     f64df1 = df1.to_numpy(dtype='float64')
     np.save(numpy_path, f64df0)
@@ -66,7 +59,7 @@ def sub_iterator(overwrite, output_folder, symbol, functions):
         for fn in functions:
             fn(symbol_folder, name, overwrite)
     concatenate(symbol_folder, '.npy')
-    concatenate(symbol_folder, '.npyi.npy')
+    concatenate(symbol_folder, 'i.npy')
     print(f"FINISHED {symbol}")
 
 
