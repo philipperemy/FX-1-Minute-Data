@@ -44,7 +44,7 @@ def concatenate(folder, ending):
         return
     files = [os.path.join(folder, name) for name in files]
     numpy = [np.load(name) for name in files]
-    numpy = np.concatenate(numpy, axis=0)
+    numpy = np.concatenate(numpy, axis=1)
     np.save(f'{folder}{ending}', numpy)
 
 
