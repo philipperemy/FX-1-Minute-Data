@@ -19,26 +19,23 @@ def norm(current_list, previous_list):
     return zip(*((current / previous - 1, (current / previous - 1) if current > previous else (- previous / current + 1)) for current, previous in zip(current_list, previous_list)))
 
 
+def save(path, high, low, close):
+    np.save(path, 
+            np.array([*norm(high[1:], close),
+                      *norm(low[1:], close),
+                      *norm(close[1:], close)], 
+                     dtype=np.float64))
+
+
 def prepare_data(symbol_folder, name, overwrite):
     path = os.path.join(symbol_folder, name.replace('.zip', '.csv'))
     numpy_path = path.replace('.csv', '')
     if not path.endswith('.csv') or (not overwrite and os.path.exists(numpy_path)):
         return
-    df0 = pd.read_csv(path, sep=';', header=None)
-    high = df0[2]
-    low = df0[3] 
-    close = df0[4]
-    df0[0], df0[1] = norm(high[1:], close)
-    df0[2], df0[3] = norm(low[1:], close)
-    df0[4], df0[5] = norm(close[1:], close)
-    df1 = df0.copy(deep=True)
-    df1[0], df1[1] = norm(1/low[1:], 1/close)
-    df1[2], df1[3] = norm(1/high[1:], 1/close)
-    df1[4], df1[5] = norm(1/close[1:], 1/close)
-    f64df0 = df0.to_numpy(dtype='float64')
-    f64df1 = df1.to_numpy(dtype='float64')
-    np.save(numpy_path, f64df0)
-    np.save(numpy_path + 'i', f64df1)  # npyi -> npy inverted
+    dataframe = pd.read_csv(path, sep=';', header=None)
+    high, low, close = dataframe[2], dataframe[3], dataframe[4]
+    save(numpy_path, high, low, close)
+    save(numpy_path + 'i', 1 / low, 1 / high, 1 / close)
 
 
 def concatenate(folder, ending):
