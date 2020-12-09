@@ -59,16 +59,17 @@ def process_currency(row, start_year):
 
 
 def download_all():
-    sys.stdout = open("/dev/null", 'w')
-    start_year = datetime.datetime.now().year
-    with open('pairs.csv', 'r') as f:
-        reader = csv.reader(f, delimiter=',')
-        next(reader, None)  # skip the headers
-        pool = [multiprocessing.Process(target=process_currency, args=(row, start_year)) for row in reader]
-    for p in pool:
-        p.start()
-    for p in pool:
-        p.join()
+    with open("logs.txt", 'w') as out:
+        sys.stdout = out
+        start_year = datetime.datetime.now().year
+        with open('pairs.csv', 'r') as f:
+            reader = csv.reader(f, delimiter=',')
+            next(reader, None)  # skip the headers
+            pool = [multiprocessing.Process(target=process_currency, args=(row, start_year)) for row in reader]
+        for p in pool:
+            p.start()
+        for p in pool:
+            p.join()
     sys.stdout = sys.__stdout__
 
 
