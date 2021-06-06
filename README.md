@@ -2,9 +2,11 @@
 
 API and dataset download for [histdata.com](http://histdata.com).
 
-## Dataset 1M from 2000 to May 2021
+## Download the dataset
 
-- [Google Drive link (full is 2GB)](https://drive.google.com/drive/folders/1IG_5SM3SLsxVeaDJlmL2qskex5EsTwjG?usp=sharing).
+- [All instruments - 1Minute - 2000 to May 2021 - Google Drive link (full is 2GB)](https://drive.google.com/drive/folders/1IG_5SM3SLsxVeaDJlmL2qskex5EsTwjG?usp=sharing).
+
+- You can download only what you need. For example the pair `eurusd`.
 
 - You can also re-download the whole dataset (up to date) by yourself:
 
@@ -133,6 +135,5 @@ The close (last) bid quote of the 1M bin.
 ### Volume
 
 Number of lots. From what I saw it's always 0 here.
-
 
 
