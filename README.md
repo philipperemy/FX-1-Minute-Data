@@ -4,7 +4,7 @@ API and dataset download for [histdata.com](http://histdata.com).
 
 ## Download the dataset
 
-- [All instruments - 1Minute - 2000 to May 2021 - Google Drive link (full is 2GB)](https://drive.google.com/drive/folders/1IG_5SM3SLsxVeaDJlmL2qskex5EsTwjG?usp=sharing).
+- [All instruments - 1Minute - 2000 to May 2021 - Google Drive link (Full data is around 2GB)](https://drive.google.com/drive/folders/1IG_5SM3SLsxVeaDJlmL2qskex5EsTwjG?usp=sharing).
 
 - You can download only what you need with the link above. For example the pair `eurusd`.
 
