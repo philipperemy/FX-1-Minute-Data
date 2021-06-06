@@ -6,7 +6,7 @@ API and dataset download for [histdata.com](http://histdata.com).
 
 - [All instruments - 1Minute - 2000 to May 2021 - Google Drive link (full is 2GB)](https://drive.google.com/drive/folders/1IG_5SM3SLsxVeaDJlmL2qskex5EsTwjG?usp=sharing).
 
-- You can download only what you need. For example the pair `eurusd`.
+- You can download only what you need with the link above. For example the pair `eurusd`.
 
 - You can also re-download the whole dataset (up to date) by yourself:
 
