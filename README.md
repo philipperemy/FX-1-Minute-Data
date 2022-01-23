@@ -59,7 +59,7 @@ dl(year='2018', month='6', pair='eurusd', platform=P.NINJA_TRADER, time_frame=TF
 ## Data specification
 
 This repository contains:
-- A dataset of all the FX prices (1-minute data) from 2000 to 2021, in Generic ASCII.
+- A dataset of all the FX prices (1-minute data) from 2000, in Generic ASCII.
    - More than 66 FX pairs
 - Contains some commodities:
    - WTI/USD = WEST TEXAS INTERMEDIATE in USD
