@@ -6,7 +6,7 @@ API and dataset download for [histdata.com](http://histdata.com).
 
 - Click Here to download it: [All instruments - 1Minute - 2000 / 2021 - Google Drive link (2.5GB)](https://drive.google.com/drive/folders/1IG_5SM3SLsxVeaDJlmL2qskex5EsTwjG?usp=sharing).
 
-- You can download only what you need with the link above. For example, downloading the 1minute FX candles for the pair `eurusd` on the year 2020 is possible.
+- You can download what you need with the link above. Downloading only the 1minute FX candles for the pair `eurusd` on the year 2020 is possible.
 
 - You can also re-download the whole dataset (up to date) by yourself:
 
