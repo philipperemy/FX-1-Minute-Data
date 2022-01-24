@@ -15,7 +15,7 @@ pip install -r requirements.txt
 python download_all_fx_data.py
 ```
 
-Expect it to take somewhere between 10 minutes to 4 hours, depending on your internet speed.
+Expect it to take around 10 minutes if you have a fast internet connection.
 
 
 ## API
