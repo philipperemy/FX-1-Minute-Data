@@ -6,8 +6,6 @@ API and dataset download for [histdata.com](http://histdata.com).
 
 - Click Here to download it: [All instruments - 1Minute - 2000 / 2021 - Google Drive link (2.5GB)](https://drive.google.com/drive/folders/1IG_5SM3SLsxVeaDJlmL2qskex5EsTwjG?usp=sharing).
 
-- You can download what you need with the link above. Downloading only the 1minute FX candles for the pair `eurusd` on the year 2020 is possible.
-
 - You can also re-download the whole dataset (up to date) by yourself:
 
 ```bash
@@ -96,7 +94,7 @@ Any CSV file looks like this:
 
 Headers are not included in the CSV files. They are:
 
-```bash
+```csv
 DateTime Stamp;Bar OPEN Bid Quote;Bar HIGH Bid Quote;Bar LOW Bid Quote;Bar CLOSE Bid Quote;Volume
 ```
 
@@ -123,7 +121,6 @@ The open (first) bid quote of the 1M bin.
 
 The highest bid quote of the 1M bin.
 
-
 ### LOW Bid Quote
 
 The lowest bid quote of the 1M bin.
@@ -134,6 +131,4 @@ The close (last) bid quote of the 1M bin.
 
 ### Volume
 
-Number of lots. From what I saw it's always 0 here.
-
-
+Number of lots. Looks like it's always 0.
