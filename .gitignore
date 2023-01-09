@@ -101,3 +101,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# some data folders
+data/
+output/
