@@ -105,3 +105,4 @@ ENV/
 # some data folders
 data/
 output/
+fixoutput/

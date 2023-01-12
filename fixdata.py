@@ -1,20 +1,21 @@
 import argparse
-from io import TextIOWrapper
 import os
 import datetime
 import re
 import numpy as np
 import pandas as pd
+import histdata.monthly_merger_api as monthly
 
 TIMEFRAME_CONST = 60 * 1000  # 1 minute
 OUTPUT_PATH = "fixoutput"
+COLNAMES = ['datetime_str', 'open', 'close', 'high', 'low', 'volume']
 
 
-def fix_data(dirpath: str, output_format: str):
-    walk_through_data(dirpath, output_format)
+def fix_data(dirpath: str, output_format: str, monthly_to_yearly: bool):
+    walk_through_data(dirpath, output_format, monthly_to_yearly)
 
 
-def walk_through_data(dirpath: str, output_format: str):
+def walk_through_data(dirpath: str, output_format: str, monthly_to_yearly: bool):
     for root, _, files in os.walk(dirpath):
         output_dir = root.replace(dirpath, OUTPUT_PATH, 1)
 
@@ -23,18 +24,76 @@ def walk_through_data(dirpath: str, output_format: str):
 
         print(root)
 
-        for file in files:
+        monthly_pairs = {}
+
+        for file in sorted(files):
             file_input = os.path.join(root, file)
 
-            if os.path.splitext(file_input)[1] != ".csv":
+            splitted_file_name = os.path.splitext(file_input)
+
+            if splitted_file_name[1] != ".csv":
                 continue
 
-            fixed_df = fix_csv(file_input)
+            if monthly_to_yearly & monthly.is_monthly_csv(splitted_file_name[0]):
+                monthly_pairs = monthly.append_to_monthly_pairs(
+                    monthly_pairs, splitted_file_name[0], file_input)
+                continue
 
-            file_output = file_input.replace(
-                dirpath, OUTPUT_PATH, 1).replace(".csv", "", 1)
+            print(f"---Parsing file {file_input}---")
 
-            write_output(fixed_df, file_output, output_format)
+            csv_df = pd.read_csv(file_input, names=COLNAMES,
+                                 header=None, delimiter=";")
+
+            gap_info_df = get_gap_info(file_input)
+
+            fix(csv_df, gap_info_df, file_input, dirpath, output_format)
+
+        if monthly_to_yearly:
+            fix_monthly(monthly_pairs, dirpath, output_format)
+
+
+def fix(data_df: pd.DataFrame, gap_info_df: pd.DataFrame,
+        file_input: str, dirpath: str, output_format: str):
+
+    fixed_df = fix_csv(data_df, gap_info_df)
+
+    file_output = file_input.replace(
+        dirpath, OUTPUT_PATH, 1).replace(".csv", "", 1)
+
+    write_output(fixed_df, file_output, output_format)
+
+
+def fix_monthly(pairs: dict, dirpath: str, output_format: str):
+    for pair in pairs.values():
+        for year in pair.values():
+            df_list = []
+            gap_df_list = []
+
+            for file in year:
+                print(f"-----Parsing monthly file {file}-----")
+                df_monthly = pd.read_csv(file, names=COLNAMES,
+                                         header=None, delimiter=";")
+                gap_df_monthly = get_gap_info(file)
+
+                df_list.append(df_monthly)
+                gap_df_list.append(gap_df_monthly)
+
+            if len(df_list) == 0:
+                continue
+
+            yearly_input_file = get_yearly_input_file(year[0])
+            print(
+                f"---Converting monthly to yearly file {yearly_input_file}---")
+
+            yearly_df = pd.concat(df_list).reset_index(drop=True)
+            yearly_gap_df = pd.concat(gap_df_list)
+
+            fix(yearly_df, yearly_gap_df, yearly_input_file, dirpath, output_format)
+
+
+def get_yearly_input_file(input_file: str):
+    split_file = os.path.splitext(input_file)
+    return split_file[0][:-2] + split_file[1]
 
 
 def write_output(fixed_df: pd.DataFrame, file_output: str, output_format: str = "csv"):
@@ -49,30 +108,17 @@ def write_output(fixed_df: pd.DataFrame, file_output: str, output_format: str = 
             raise Exception(f"Not supported output format: {output_format}")
 
 
-def fix_csv(file_input: str):
-    splited_file = os.path.splitext(file_input)
+def fix_csv(data_df: pd.DataFrame, gap_info_df: pd.DataFrame):
 
-    file_gap = f"{splited_file[0]}.txt"
+    gap_info_df = modify_gap_info(gap_info_df)
 
-    print(f"---Parsing file {file_input}---")
+    data_df["datetime"] = pd.to_datetime(
+        data_df["datetime_str"]).dt.tz_localize('-0500')
 
-    colnames = ['datetime_str', 'open', 'close', 'high', 'low', 'volume']
-    csv_df = pd.read_csv(file_input, names=colnames,
-                         header=None, delimiter=";")
+    csv_df = data_df.drop("datetime_str", axis=1)
 
-    with open(file_gap, newline='', encoding="utf-8") as gapfile:
-        gap_info = pd.DataFrame(get_gap_info(gapfile), columns=[
-                                "gap", "datetime_str1", "datetime_str2"])
-
-    gap_info = modify_gap_info(gap_info)
-
-    csv_df["datetime"] = pd.to_datetime(
-        csv_df["datetime_str"]).dt.tz_localize('-0500')
-
-    csv_df = csv_df.drop("datetime_str", axis=1)
-
-    if not gap_info.empty:
-        csv_df = pd.merge(csv_df, gap_info, on='datetime', how='outer')
+    if not gap_info_df.empty:
+        csv_df = pd.merge(csv_df, gap_info_df, on='datetime', how='outer')
 
     resampled_df = apply_resample(csv_df)
 
@@ -134,19 +180,26 @@ def modify_gap_info(gap_info: pd.DataFrame):
     return gap_info
 
 
-def get_gap_info(file: TextIOWrapper):
-    gap_info_list = []
-    for line in file:
-        if line.startswith("Gap of"):
-            gap_info_list.append(parse_gap_line(line))
-    return np.array(gap_info_list)
+def get_gap_info(csv_full_file: str):
+    file_gap = f"{os.path.splitext(csv_full_file)[0]}.txt"
+
+    with open(file_gap, newline='', encoding="utf-8") as file:
+        gap_info_list = []
+        for line in file:
+            if line.startswith("Gap of"):
+                gap_info_list.append(parse_gap_line(line))
+
+        gap_info_df = pd.DataFrame(np.array(gap_info_list), columns=[
+            "gap", "datetime_str1", "datetime_str2"])
+
+    return gap_info_df
 
 
 def parse_gap_line(line: str):
     return re.findall(r'\d+', line)
 
 
-def datetime_to_unix(_datetime: datetime):
+def datetime_to_unix(_datetime: datetime.datetime):
     return int(datetime.datetime.timestamp(_datetime) * 1000)
 
 
@@ -157,5 +210,10 @@ if __name__ == "__main__":
                         help='directory for the data')
     parser.add_argument('--output_format', metavar='path', default="csv",
                         help='output data format')
+    parser.add_argument('--monthly_to_yearly', metavar='path', default=False,
+                        action=argparse.BooleanOptionalAction,
+                        help='Converts monthly datasets to yearly by concatenating')
     args = parser.parse_args()
-    fix_data(dirpath=args.dir, output_format=args.output_format)
+
+    fix_data(dirpath=args.dir, output_format=args.output_format,
+             monthly_to_yearly=args.monthly_to_yearly)
