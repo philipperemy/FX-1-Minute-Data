@@ -77,7 +77,7 @@ E   - TX/EUR = EUROSTOXX 50 in EUR
 
 All the data is retrieved from: http://www.histdata.com/
 
-Any file in a dataset is zipped and contains: 
+Any file in a dataset is zipped and contains:
 - a CSV (semicolon separated file).
 - a status report (containing some meta data such as gaps).
 
@@ -132,3 +132,21 @@ The close (last) bid quote of the 1M bin.
 ### Volume
 
 Number of lots. Looks like it's always 0.
+
+## Fix data (ASCII only)
+
+This dataset does have gaps between datetime values, so here is a given data fixing algorithm that fills gaps in the dataset. Currently, only ASCII is supported.
+
+To fix the data run in the console:
+
+`python ./fixdata.py --dir ./pathtodir`
+
+The output is a modified dataset in the `./fixoutput` directory.
+
+### All parameters
+
+| Tables                            | Are
+| --------------------------------- |--------------------------------------------------------------------
+| `--dir {path}`                    | input directory for the downloaded data
+| `--output_format {'csv'\|'hdf5'}` | output format. Currently supported: `csv`, `hdf5`. Default: `csv`
+| `--monthly_to_yearly`             | option to convert monthly csv data to yearly. Default: False
