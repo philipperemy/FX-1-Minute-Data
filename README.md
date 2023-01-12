@@ -145,8 +145,8 @@ The output is a modified dataset in the `./fixoutput` directory.
 
 ### All parameters
 
-| Tables                            | Are
+| Parameter                         | Description
 | --------------------------------- |--------------------------------------------------------------------
-| `--dir {path}`                    | input directory for the downloaded data
+| `--dir {path}`                    | **(Mandatory)** Input directory for the downloaded data
 | `--output_format {'csv'\|'hdf5'}` | output format. Currently supported: `csv`, `hdf5`. Default: `csv`
 | `--monthly_to_yearly`             | option to convert monthly csv data to yearly. Default: False
