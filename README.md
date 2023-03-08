@@ -1,10 +1,10 @@
-# FX 1-Minute Dataset (+ Crude Oil and Stock indexes)
+# FX 1-Minute Dataset (+ Crude Oil and Stock indexes e.g. SP500)
 
 API and dataset download for [histdata.com](http://histdata.com).
 
 ## Download the dataset
 
-- Click Here to download it: [All instruments - 1Minute - 2000 / 2021 - Google Drive link (2.5GB)](https://drive.google.com/drive/folders/1IG_5SM3SLsxVeaDJlmL2qskex5EsTwjG?usp=sharing).
+- Click Here to download it: [All instruments - 1Minute - 2000 / 2022 - Google Drive link (2.5GB)](https://drive.google.com/drive/folders/1IG_5SM3SLsxVeaDJlmL2qskex5EsTwjG?usp=sharing).
 
 - You can also re-download the whole dataset (up to date) by yourself:
 
