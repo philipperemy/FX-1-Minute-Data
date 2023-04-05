@@ -8,7 +8,7 @@ import histdata.monthly_merger_api as monthly
 
 TIMEFRAME_CONST = 60 * 1000  # 1 minute
 OUTPUT_PATH = "fixoutput"
-COLNAMES = ['datetime_str', 'open', 'close', 'high', 'low', 'volume']
+COLNAMES = ['datetime_str', 'open', 'high', 'low', 'close', 'volume']
 
 
 def fix_data(dirpath: str, output_format: str, monthly_to_yearly: bool):
