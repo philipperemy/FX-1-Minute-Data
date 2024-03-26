@@ -1,6 +1,6 @@
 # FX 1-Minute Dataset (+ Crude Oil and Stock indexes e.g. SP500)
 
-API and dataset download for [histdata.com](http://histdata.com).
+API and dataset download for [histdata.com](http://histdata.com). Tick data is also available with the API.
 
 ## Download the dataset
 
