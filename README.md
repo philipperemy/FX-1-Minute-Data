@@ -4,7 +4,7 @@ API and dataset download for [histdata.com](http://histdata.com). Tick data is a
 
 ## Download the dataset
 
-- Click Here to download it: [All instruments - 1Minute - 2000 / 2023 - Google Drive link (3GB)](https://drive.google.com/drive/folders/1IG_5SM3SLsxVeaDJlmL2qskex5EsTwjG?usp=sharing).
+- Click Here to download it: [All instruments - 1Minute - 2000 / 2024 - Google Drive link (3GB)](https://drive.google.com/drive/folders/1IG_5SM3SLsxVeaDJlmL2qskex5EsTwjG?usp=sharing).
 
 - You can also re-download the whole dataset (up to date) by yourself:
 
