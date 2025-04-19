@@ -79,6 +79,17 @@ def download_hist_data(year='2016',
     :param output_directory: Where to dump the data.
     :return: ZIP Filename.
     """
+    if month is None:
+        output_filename = 'DAT_{}_{}_{}_{}.zip'.format(platform, pair.upper(), time_frame, str(year))
+    else:
+        output_filename = 'DAT_{}_{}_{}_{}.zip'.format(platform, pair.upper(), time_frame,
+                                                       '{}{}'.format(year, str(month).zfill(2)))
+    output_filename = os.path.join(output_directory, output_filename)
+
+    if os.path.exists(output_filename):
+        if verbose:
+            print(f"{output_filename} realdy exists, skipping download")
+        return output_filename
 
     tick_data = time_frame.startswith('T')
     if (not tick_data) and ((int(year) >= datetime.now().year and month is None) or
@@ -129,12 +140,6 @@ def download_hist_data(year='2016',
         print(data)
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
-    if month is None:
-        output_filename = 'DAT_{}_{}_{}_{}.zip'.format(platform, pair.upper(), time_frame, str(year))
-    else:
-        output_filename = 'DAT_{}_{}_{}_{}.zip'.format(platform, pair.upper(), time_frame,
-                                                       '{}{}'.format(year, str(month).zfill(2)))
-    output_filename = os.path.join(output_directory, output_filename)
     with open(output_filename, 'wb') as f:
         for chunk in r.iter_content(chunk_size=1024):
             if chunk:
