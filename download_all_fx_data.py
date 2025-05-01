@@ -16,6 +16,8 @@ def mkdir_p(path):
 
 
 def download_all():
+    output = os.environ.get("FX_DATA_OUTPUT", 'output')
+
     with open('pairs.csv', 'r') as f:
         reader = csv.reader(f, delimiter=',')
         next(reader, None)  # skip the headers
@@ -23,7 +25,7 @@ def download_all():
             currency_pair_name, pair, history_first_trading_month = row
             year = int(history_first_trading_month[0:4])
             print(currency_pair_name)
-            output_folder = os.path.join('output', pair)
+            output_folder = os.path.join(output, pair)
             mkdir_p(output_folder)
             try:
                 while True:
