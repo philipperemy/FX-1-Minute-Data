@@ -2,6 +2,9 @@
 
 API and dataset download for [histdata.com](http://histdata.com). Tick data is also available with the API.
 
+For a broader support, consider checking out this project [https://github.com/dmidlo/histdata.com-tools].
+
+
 ## Download the dataset
 
 - Click Here to download it: [All instruments - 1Minute - 2000 / 2024 - Google Drive link (3GB)](https://drive.google.com/drive/folders/1IG_5SM3SLsxVeaDJlmL2qskex5EsTwjG?usp=sharing).
